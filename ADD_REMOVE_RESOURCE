@@ -7,3 +7,7 @@ crm configure order apache-after-ip mandatory: ClusterIP Apache
 STEPS TO DELETE RESOURCE
 crm resource stop my_first_svc
 crm configure delete my_first_svc
+
+CLEAN RESOURCE
+crm resource clean my_first_svc
+
