@@ -11,3 +11,8 @@ crm configure delete my_first_svc
 CLEAN RESOURCE
 crm resource clean my_first_svc
 
+MOVE RESOURCE NAMED APACE
+crm resource move resourcename nodename
+crm resource move Apache AMAZRUSEHPMC02
+
+
