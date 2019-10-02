@@ -5,6 +5,9 @@ crm configure group HTTP-GROUP ClusterIP Apache
 crm configure colocation website-with-ip INFINITY: WebSite ClusterIP
 crm configure order apache-after-ip mandatory: ClusterIP Apache
 
+PREFERED LOCATION FOR RESOURCE
+crm configure location prefer-node1-AMAZRUSEHPMC01-for-apache  Apache 50: AMAZRUSEHPMC01
+
 STEPS TO DELETE RESOURCE
 crm resource stop my_first_svc
 crm configure delete my_first_svc
