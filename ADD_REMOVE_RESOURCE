@@ -2,6 +2,7 @@ STEPS TO ADD RESOURCE
 crm configure primitive ClusterIP ocf:heartbeat:IPaddr2 params ip=10.0.0.50 cidr_netmask="24" op monitor interval="30s"
 crm configure primitive Apache ocf:heartbeat:apache params configfile=/etc/apache2/httpd.conf op monitor interval="30s" op start timeout="40s" op stop timeout="60s"
 crm configure group HTTP-GROUP ClusterIP Apache
+crm configure colocation website-with-ip INFINITY: WebSite ClusterIP
 crm configure order apache-after-ip mandatory: ClusterIP Apache
 
 STEPS TO DELETE RESOURCE
