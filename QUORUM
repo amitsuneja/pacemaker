@@ -1,0 +1,56 @@
+When 2 nodes are UP ....
+
+
+AMAZRUSEHPMC01:~/cluster_commands # corosync-quorumtool
+Quorum information
+------------------
+Date:             Wed Oct  9 20:33:06 2019
+Quorum provider:  corosync_votequorum
+Nodes:            2
+Node ID:          1
+Ring ID:          112
+Quorate:          Yes
+
+Votequorum information
+----------------------
+Expected votes:   2
+Highest expected: 2
+Total votes:      2
+Quorum:           1
+Flags:            2Node Quorate WaitForAll
+
+Membership information
+----------------------
+    Nodeid      Votes Name
+         1          1 10.0.0.4 (local)
+         2          1 10.0.0.5
+AMAZRUSEHPMC01:~/cluster_commands #
+
+
+
+
+When 2 nodes are UP and we powered off second node.
+
+
+AMAZRUSEHPMC01:~/cluster_commands # corosync-quorumtool
+Quorum information
+------------------
+Date:             Wed Oct  9 21:19:21 2019
+Quorum provider:  corosync_votequorum
+Nodes:            1
+Node ID:          1
+Ring ID:          116
+Quorate:          Yes
+
+Votequorum information
+----------------------
+Expected votes:   2
+Highest expected: 2
+Total votes:      1
+Quorum:           1
+Flags:            2Node Quorate WaitForAll
+
+Membership information
+----------------------
+    Nodeid      Votes Name
+         1          1 10.0.0.4 (local)
