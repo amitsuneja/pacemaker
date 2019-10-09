@@ -1,0 +1,9 @@
+AMAZRUSEHPMC01:~ # crm configure show | grep stonith-enabled=
+        stonith-enabled=false \
+
+
+AMAZRUSEHPMC01:~ # crm configure property stonith-enabled=true
+
+
+AMAZRUSEHPMC01:~ # crm configure show | grep stonith-enabled=
+        stonith-enabled=true \
