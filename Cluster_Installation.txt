@@ -1,0 +1,451 @@
+
+
+
+
+
+
+------------------------------------------
+
+susenode01:~ #
+susenode02:~ # zypper repos
+Repository priorities are without effect. All enabled repositories share the same priority.
+
+# | Alias                                                                   | Name                         | Enabled | GPG Check | Refresh
+--+-------------------------------------------------------------------------+------------------------------+---------+-----------+--------
+1 | SLES12-SP3-12.3-0                                                       | SLES12-SP3-12.3-0            | Yes     | (r ) Yes  | No
+2 | SUSE_Linux_Enterprise_Server_12_SP3_x86_64:SLES12-SP3-Debuginfo-Pool    | SLES12-SP3-Debuginfo-Pool    | No      | ----      | ----
+3 | SUSE_Linux_Enterprise_Server_12_SP3_x86_64:SLES12-SP3-Debuginfo-Updates | SLES12-SP3-Debuginfo-Updates | No      | ----      | ----
+4 | SUSE_Linux_Enterprise_Server_12_SP3_x86_64:SLES12-SP3-Pool              | SLES12-SP3-Pool              | Yes     | (r ) Yes  | No
+5 | SUSE_Linux_Enterprise_Server_12_SP3_x86_64:SLES12-SP3-Source-Pool       | SLES12-SP3-Source-Pool       | No      | ----      | ----
+6 | SUSE_Linux_Enterprise_Server_12_SP3_x86_64:SLES12-SP3-Updates           | SLES12-SP3-Updates           | Yes     | (r ) Yes  | Yes
+
+
+
+susenode02:/dev # SUSEConnect --status-text
+Installed Products:
+------------------------------------------
+
+  SUSE Linux Enterprise Server 12 SP3
+  (SLES/12.3/x86_64)
+
+  Registered
+
+    Subscription:
+
+    Regcode: A2FF8CFC1043A8
+    Starts at: 2019-08-28 00:00:00 UTC
+    Expires at: 2019-10-27 00:00:00 UTC
+    Status: ACTIVE
+    Type: evaluation
+
+
+------------------------------------------
+
+  SUSE Linux Enterprise High Availability Extension 12 SP3
+  (sle-ha/12.3/x86_64)
+
+  Registered
+
+    Subscription:
+
+    Regcode: 17DA6048543333
+    Starts at: 2019-08-29 00:00:00 UTC
+    Expires at: 2019-10-28 00:00:00 UTC
+    Status: ACTIVE
+    Type: evaluation
+
+
+susenode01:~ # zypper update
+Refreshing service 'SUSE_Linux_Enterprise_High_Availability_Extension_12_SP3_x86_64'.
+Refreshing service 'SUSE_Linux_Enterprise_Server_12_SP3_x86_64'.
+Loading repository data...
+Reading installed packages...
+
+Nothing to do.
+susenode01:~ #
+
+
+
+Refreshing service 'SUSE_Linux_Enterprise_High_Availability_Extension_12_SP3_x86_64'.
+Refreshing service 'SUSE_Linux_Enterprise_Server_12_SP3_x86_64'.
+Loading repository data...
+Reading installed packages...
+Resolving package dependencies...
+
+The following 3 NEW packages are going to be installed:
+  graphviz graphviz-gd graphviz-gnome
+
+The following recommended package was automatically selected:
+  graphviz-gd
+
+3 new packages to install.
+Overall download size: 1.1 MiB. Already cached: 0 B. After the operation, additional 3.7 MiB will be used.
+Continue? [y/n/...? shows all options] (y): y
+Retrieving package graphviz-2.28.0-27.29.x86_64                                  (1/3),   1.0 MiB (  3.5 MiB unpacked)
+Retrieving: graphviz-2.28.0-27.29.x86_64.rpm ...................................................................[done]
+Retrieving package graphviz-gd-2.28.0-27.96.x86_64                               (2/3),  21.7 KiB ( 46.1 KiB unpacked)
+Retrieving: graphviz-gd-2.28.0-27.96.x86_64.rpm ................................................................[done]
+Retrieving package graphviz-gnome-2.28.0-27.96.x86_64                            (3/3),  33.4 KiB (104.3 KiB unpacked)
+Retrieving: graphviz-gnome-2.28.0-27.96.x86_64.rpm .............................................................[done]
+Checking for file conflicts: ...................................................................................[done]
+(1/3) Installing: graphviz-2.28.0-27.29.x86_64 .................................................................[done]
+(2/3) Installing: graphviz-gd-2.28.0-27.96.x86_64 ..............................................................[done]
+(3/3) Installing: graphviz-gnome-2.28.0-27.96.x86_64 ...........................................................[done]
+susenode02:/dev #
+
+
+
+Refreshing service 'SUSE_Linux_Enterprise_High_Availability_Extension_12_SP3_x86_64'.
+Refreshing service 'SUSE_Linux_Enterprise_Server_12_SP3_x86_64'.
+Loading repository data...
+Reading installed packages...
+Resolving package dependencies...
+
+The following 29 NEW packages are going to be installed:
+  cluster-glue corosync crmsh crmsh-scripts csync2 fence-agents gnutls libcorosync4 libdlm libdlm3 libglue2 libnet9
+  libpacemaker3 libqb0 librsync1 libvirt-client pacemaker pacemaker-cli perl-Net-Telnet python-PyYAML python-cssselect
+  python-curses python-dateutil python-lxml python-parallax python-pexpect python-suds resource-agents sbd
+
+The following 5 recommended packages were automatically selected:
+  crmsh fence-agents libdlm libvirt-client sbd
+
+29 new packages to install.
+Overall download size: 7.0 MiB. Already cached: 0 B. After the operation, additional 21.1 MiB will be used.
+Continue? [y/n/...? shows all options] (y): y
+Retrieving package python-dateutil-2.4.2-14.2.noarch                            (1/29), 216.7 KiB (443.1 KiB unpacked)
+Retrieving: python-dateutil-2.4.2-14.2.noarch.rpm ..............................................................[done]
+Retrieving package python-parallax-1.0.1-1.2.noarch                             (2/29),  31.1 KiB (103.5 KiB unpacked)
+Retrieving: python-parallax-1.0.1-1.2.noarch.rpm ...............................................................[done]
+Retrieving package python-pexpect-3.1-1.1.noarch                                (3/29), 101.4 KiB (449.4 KiB unpacked)
+Retrieving: python-pexpect-3.1-1.1.noarch.rpm ..................................................................[done]
+Retrieving package python-suds-0.4-14.2.noarch                                  (4/29), 171.5 KiB (992.4 KiB unpacked)
+Retrieving: python-suds-0.4-14.2.noarch.rpm ....................................................................[done]
+Retrieving package librsync1-0.9.7-193.18.x86_64                                (5/29),  41.4 KiB (106.0 KiB unpacked)
+Retrieving: librsync1-0.9.7-193.18.x86_64.rpm ..................................................................[done]
+Retrieving package crmsh-scripts-3.0.3-13.8.1.noarch                            (6/29),  88.7 KiB ( 61.5 KiB unpacked)
+Retrieving: crmsh-scripts-3.0.3-13.8.1.noarch.rpm ..............................................................[done]
+Retrieving package libdlm3-4.0.7-3.3.2.x86_64                                   (7/29),  26.4 KiB ( 54.9 KiB unpacked)
+Retrieving: libdlm3-4.0.7-3.3.2.x86_64.rpm .....................................................................[done]
+Retrieving package libqb0-1.0.3+20171226.6d62b64-4.3.1.x86_64                   (8/29),  84.4 KiB (453.7 KiB unpacked)
+Retrieving: libqb0-1.0.3+20171226.6d62b64-4.3.1.x86_64.rpm .....................................................[done]
+Retrieving package csync2-2.0+git.1368794815.cf835a7-3.3.1.x86_64               (9/29), 260.0 KiB (339.4 KiB unpacked)
+Retrieving: csync2-2.0+git.1368794815.cf835a7-3.3.1.x86_64.rpm .................................................[done]
+Retrieving package libcorosync4-2.3.6-9.13.1.x86_64                            (10/29),  99.5 KiB (285.0 KiB unpacked)
+Retrieving: libcorosync4-2.3.6-9.13.1.x86_64.rpm ...............................................................[done]
+Retrieving package corosync-2.3.6-9.13.1.x86_64                                (11/29), 169.9 KiB (441.8 KiB unpacked)
+Retrieving: corosync-2.3.6-9.13.1.x86_64.rpm ...................................................................[done]
+Retrieving package cluster-glue-1.0.12+v1.git.1485976882.03d61cd-3.8.1.x86_64  (12/29), 218.2 KiB (723.5 KiB unpacked)
+Retrieving: cluster-glue-1.0.12+v1.git.1485976882.03d61cd-3.8.1.x86_64.rpm .....................................[done]
+Retrieving package libglue2-1.0.12+v1.git.1485976882.03d61cd-3.8.1.x86_64      (13/29), 130.6 KiB (306.8 KiB unpacked)
+Retrieving: libglue2-1.0.12+v1.git.1485976882.03d61cd-3.8.1.x86_64.rpm .........................................[done]
+Retrieving package libpacemaker3-1.1.16-6.14.1.x86_64                          (14/29), 730.0 KiB (  1.6 MiB unpacked)
+Retrieving: libpacemaker3-1.1.16-6.14.1.x86_64.rpm .............................................................[done]
+Retrieving package sbd-1.4.0+20190514.e9be8d9-4.11.1.x86_64                    (15/29),  75.4 KiB (116.5 KiB unpacked)
+Retrieving: sbd-1.4.0+20190514.e9be8d9-4.11.1.x86_64.rpm .......................................................[done]
+Retrieving package pacemaker-cli-1.1.16-6.14.1.x86_64                         (16/29), 486.3 KiB (1005.1 KiB unpacked)
+Retrieving: pacemaker-cli-1.1.16-6.14.1.x86_64.rpm .............................................................[done]
+Retrieving package libdlm-4.0.7-3.3.2.x86_64                                   (17/29),  91.5 KiB (167.0 KiB unpacked)
+Retrieving: libdlm-4.0.7-3.3.2.x86_64.rpm ......................................................................[done]
+Retrieving package perl-Net-Telnet-3.04-3.19.noarch                            (18/29),  59.2 KiB (179.8 KiB unpacked)
+Retrieving: perl-Net-Telnet-3.04-3.19.noarch.rpm ...............................................................[done]
+Retrieving package python-cssselect-0.9.1-1.1.noarch                           (19/29),  46.9 KiB (208.7 KiB unpacked)
+Retrieving: python-cssselect-0.9.1-1.1.noarch.rpm ..............................................................[done]
+Retrieving package libnet9-1.2~rc3-3.1.x86_64                                  (20/29),  39.1 KiB ( 96.2 KiB unpacked)
+Retrieving: libnet9-1.2~rc3-3.1.x86_64.rpm .....................................................................[done]
+Retrieving package python-lxml-3.6.1-6.2.x86_64                                (21/29), 801.6 KiB (  2.8 MiB unpacked)
+Retrieving: python-lxml-3.6.1-6.2.x86_64.rpm ...................................................................[done]
+Retrieving package gnutls-3.3.27-3.3.1.x86_64                                  (22/29), 596.8 KiB (  2.7 MiB unpacked)
+Retrieving: gnutls-3.3.27-3.3.1.x86_64.rpm .......................................................[done (512.0 KiB/s)]
+Retrieving package python-PyYAML-3.12-26.3.1.x86_64                            (23/29), 157.5 KiB (795.1 KiB unpacked)
+Retrieving: python-PyYAML-3.12-26.3.1.x86_64.rpm ...............................................................[done]
+Retrieving package python-curses-2.7.13-28.26.1.x86_64                         (24/29),  46.0 KiB (130.9 KiB unpacked)
+Retrieving: python-curses-2.7.13-28.26.1.x86_64.rpm ............................................................[done]
+Retrieving package libvirt-client-3.3.0-5.33.2.x86_64                          (25/29), 352.2 KiB (736.5 KiB unpacked)
+Retrieving: libvirt-client-3.3.0-5.33.2.x86_64.rpm .............................................................[done]
+Retrieving package resource-agents-4.0.1+git.1495055229.643177f1-2.39.1.x86_64 (26/29), 592.7 KiB (  1.9 MiB unpacked)
+Retrieving: resource-agents-4.0.1+git.1495055229.643177f1-2.39.1.x86_64.rpm ....................................[done]
+Retrieving package fence-agents-4.0.25+git.1485179354.eb43835-4.11.1.x86_64    (27/29), 234.6 KiB (563.5 KiB unpacked)
+Retrieving: fence-agents-4.0.25+git.1485179354.eb43835-4.11.1.x86_64.rpm .......................................[done]
+Retrieving package pacemaker-1.1.16-6.14.1.x86_64                              (28/29), 578.3 KiB (  1.1 MiB unpacked)
+Retrieving: pacemaker-1.1.16-6.14.1.x86_64.rpm .................................................................[done]
+Retrieving package crmsh-3.0.3-13.8.1.noarch                                   (29/29), 655.2 KiB (  2.5 MiB unpacked)
+Retrieving: crmsh-3.0.3-13.8.1.noarch.rpm ......................................................................[done]
+Checking for file conflicts: ...................................................................................[done]
+( 1/29) Installing: python-dateutil-2.4.2-14.2.noarch ..........................................................[done]
+( 2/29) Installing: python-parallax-1.0.1-1.2.noarch ...........................................................[done]
+( 3/29) Installing: python-pexpect-3.1-1.1.noarch ..............................................................[done]
+( 4/29) Installing: python-suds-0.4-14.2.noarch ................................................................[done]
+( 5/29) Installing: librsync1-0.9.7-193.18.x86_64 ..............................................................[done]
+( 6/29) Installing: crmsh-scripts-3.0.3-13.8.1.noarch ..........................................................[done]
+( 7/29) Installing: libdlm3-4.0.7-3.3.2.x86_64 .................................................................[done]
+( 8/29) Installing: libqb0-1.0.3+20171226.6d62b64-4.3.1.x86_64 .................................................[done]
+( 9/29) Installing: csync2-2.0+git.1368794815.cf835a7-3.3.1.x86_64 .............................................[done]
+(10/29) Installing: libcorosync4-2.3.6-9.13.1.x86_64 ...........................................................[done]
+(11/29) Installing: corosync-2.3.6-9.13.1.x86_64 ...............................................................[done]
+(12/29) Installing: cluster-glue-1.0.12+v1.git.1485976882.03d61cd-3.8.1.x86_64 .................................[done]
+(13/29) Installing: libglue2-1.0.12+v1.git.1485976882.03d61cd-3.8.1.x86_64 .....................................[done]
+(14/29) Installing: libpacemaker3-1.1.16-6.14.1.x86_64 .........................................................[done]
+(15/29) Installing: sbd-1.4.0+20190514.e9be8d9-4.11.1.x86_64 ...................................................[done]
+Additional rpm output:
+Updating /etc/sysconfig/sbd...
+(16/29) Installing: pacemaker-cli-1.1.16-6.14.1.x86_64 .........................................................[done]
+Additional rpm output:
+Updating /etc/sysconfig/pacemaker...
+Updating /etc/sysconfig/crm_mon...
+(17/29) Installing: libdlm-4.0.7-3.3.2.x86_64 ..................................................................[done]
+Additional rpm output:
+Updating /etc/sysconfig/dlm...
+(18/29) Installing: perl-Net-Telnet-3.04-3.19.noarch ...........................................................[done]
+(19/29) Installing: python-cssselect-0.9.1-1.1.noarch ..........................................................[done]
+(20/29) Installing: libnet9-1.2~rc3-3.1.x86_64 .................................................................[done]
+(21/29) Installing: python-lxml-3.6.1-6.2.x86_64 ...............................................................[done]
+(22/29) Installing: gnutls-3.3.27-3.3.1.x86_64 .................................................................[done]
+(23/29) Installing: python-PyYAML-3.12-26.3.1.x86_64 ...........................................................[done]
+(24/29) Installing: python-curses-2.7.13-28.26.1.x86_64 ........................................................[done]
+(25/29) Installing: libvirt-client-3.3.0-5.33.2.x86_64 .........................................................[done]
+Additional rpm output:
+Updating /etc/sysconfig/libvirt-guests...
+(26/29) Installing: resource-agents-4.0.1+git.1495055229.643177f1-2.39.1.x86_64 ................................[done]
+(27/29) Installing: fence-agents-4.0.25+git.1485179354.eb43835-4.11.1.x86_64 ...................................[done]
+(28/29) Installing: pacemaker-1.1.16-6.14.1.x86_64 .............................................................[done]
+(29/29) Installing: crmsh-3.0.3-13.8.1.noarch ..................................................................[done]
+susenode02:/dev #
+
+Refreshing service 'SUSE_Linux_Enterprise_High_Availability_Extension_12_SP3_x86_64'.
+Refreshing service 'SUSE_Linux_Enterprise_Server_12_SP3_x86_64'.
+Loading repository data...
+Reading installed packages...
+'hawk' not found in package names. Trying capabilities.
+Resolving package dependencies...
+
+The following 2 NEW packages are going to be installed:
+  hawk2 ruby2.1-rubygem-bundler
+
+2 new packages to install.
+Overall download size: 26.8 MiB. Already cached: 0 B. After the operation, additional 53.3 MiB will be used.
+Continue? [y/n/...? shows all options] (y): y
+Retrieving package ruby2.1-rubygem-bundler-1.7.3-3.8.x86_64                     (1/2), 502.0 KiB (1021.2 KiB unpacked)
+Retrieving: ruby2.1-rubygem-bundler-1.7.3-3.8.x86_64.rpm .........................................[done (208.0 KiB/s)]
+Retrieving package hawk2-2.1.0+git.1516013868.bada8da4-2.16.1.x86_64             (2/2),  26.3 MiB ( 52.3 MiB unpacked)
+Retrieving: hawk2-2.1.0+git.1516013868.bada8da4-2.16.1.x86_64.rpm ..................................[done (7.5 MiB/s)]
+Checking for file conflicts: ...................................................................................[done]
+(1/2) Installing: ruby2.1-rubygem-bundler-1.7.3-3.8.x86_64 .....................................................[done]
+Additional rpm output:
+update-alternatives: using /usr/bin/bundle.ruby2.1-1.7.3 to provide /usr/bin/bundle (bundle) in auto mode
+update-alternatives: using /usr/bin/bundle.ruby2.1-1.7.3 to provide /usr/bin/bundle-1.7.3 (bundle-1.7.3) in auto mode
+update-alternatives: using /usr/bin/bundle.ruby2.1-1.7.3 to provide /usr/bin/bundle.ruby2.1 (bundle.ruby2.1) in auto mode
+update-alternatives: using /usr/bin/bundler.ruby2.1-1.7.3 to provide /usr/bin/bundler (bundler) in auto mode
+update-alternatives: using /usr/bin/bundler.ruby2.1-1.7.3 to provide /usr/bin/bundler-1.7.3 (bundler-1.7.3) in auto mode
+update-alternatives: using /usr/bin/bundler.ruby2.1-1.7.3 to provide /usr/bin/bundler.ruby2.1 (bundler.ruby2.1) in auto mode
+
+
+(2/2) Installing: hawk2-2.1.0+git.1516013868.bada8da4-2.16.1.x86_64 ............................................[done]
+Additional rpm output:
+Updating /etc/sysconfig/hawk...
+
+
+susenode02:~ #
+
+susenode01:~ # systemctl status hawk
+? hawk.service - HA Web Konsole
+   Loaded: loaded (/usr/lib/systemd/system/hawk.service; enabled; vendor preset: disabled)
+   Active: active (running) since Thu 2019-08-29 15:31:11 EDT; 3s ago
+  Process: 58409 ExecStartPre=/srv/www/hawk/bin/generate-ssl-cert (code=exited, status=0/SUCCESS)
+ Main PID: 58428 (ruby.ruby2.1)
+    Tasks: 10 (limit: 512)
+   CGroup: /system.slice/hawk.service
+           +-58428 puma 2.16.0 (ssl://0.0.0.0:7630?cert=/etc/hawk/hawk.pem&key=/etc/hawk/hawk.key) [hawk]
+           +-58433 puma: cluster worker 0: 58428 [hawk]
+
+Aug 29 15:31:11 susenode01 systemd[1]: Started HA Web Konsole.
+Aug 29 15:31:13 susenode01 bundle[58428]: [58428] Puma starting in cluster mode...
+Aug 29 15:31:13 susenode01 bundle[58428]: [58428] * Version 2.16.0 (ruby 2.1.9-p490), codename: Midwinter Nigh...rance
+Aug 29 15:31:13 susenode01 bundle[58428]: [58428] * Min threads: 0, max threads: 16
+Aug 29 15:31:13 susenode01 bundle[58428]: [58428] * Environment: production
+Aug 29 15:31:13 susenode01 bundle[58428]: [58428] * Process workers: 1
+Aug 29 15:31:13 susenode01 bundle[58428]: [58428] * Phased restart available
+Aug 29 15:31:13 susenode01 bundle[58428]: [58428] * Listening on ssl://0.0.0.0:7630?cert=/etc/hawk/hawk.pem&ke...k.key
+Aug 29 15:31:13 susenode01 bundle[58428]: [58428] Use Ctrl-C to stop
+Aug 29 15:31:15 susenode01 bundle[58428]: [58428] - Worker 0 (pid: 58433) booted, phase: 0
+Hint: Some lines were ellipsized, use -l to show in full.
+susenode01:~ #
+
+
+OPEN EXPLOERE and type : 
+https://192.168.1.18:7630/login
+
+
+
+
+
+susenode02:~ # zypper install-new-recommends
+Refreshing service 'SUSE_Linux_Enterprise_High_Availability_Extension_12_SP3_x86_64'.
+Refreshing service 'SUSE_Linux_Enterprise_Server_12_SP3_x86_64'.
+Loading repository data...
+Reading installed packages...
+Resolving package dependencies...
+The following NEW package is going to be installed:
+  ucode-intel
+1 new package to install.
+Overall download size: 1.9 MiB. Already cached: 0 B. After the operation, additional 2.5 MiB will be used.
+Continue? [y/n/...? shows all options] (y): y
+Retrieving package ucode-intel-20190514-13.44.1.x86_64                           (1/1),   1.9 MiB (  2.5 MiB unpacked)
+Retrieving: ucode-intel-20190514-13.44.1.x86_64.rpm ..............................................[done (112.0 KiB/s)]
+Checking for file conflicts: ...................................................................................[done]
+(1/1) Installing: ucode-intel-20190514-13.44.1.x86_64 ..........................................................[done]
+Output of ucode-intel-20190514-13.44.1.x86_64.rpm %posttrans script:
+    Creating initrd: /boot/initrd-4.4.180-94.100-default
+    dracut: Executing: /usr/bin/dracut --logfile /var/log/YaST2/mkinitrd.log --force /boot/initrd-4.4.180-94.100-default 4.4.180-94.100-default
+    dracut: *** Including module: bash ***
+    dracut: *** Including module: systemd ***
+    dracut: *** Including module: warpclock ***
+    dracut: *** Including module: systemd-initrd ***
+    dracut: *** Including module: i18n ***
+    dracut: *** Including module: drm ***
+    dracut: *** Including module: plymouth ***
+    dracut: *** Including module: btrfs ***
+    dracut: *** Including module: kernel-modules ***
+    dracut: *** Including module: resume ***
+    dracut: *** Including module: rootfs-block ***
+    dracut: *** Including module: suse-btrfs ***
+    dracut: *** Including module: suse-xfs ***
+    dracut: *** Including module: terminfo ***
+    dracut: *** Including module: udev-rules ***
+    dracut: Skipping udev rule: 40-redhat.rules
+    dracut: Skipping udev rule: 50-firmware.rules
+    dracut: Skipping udev rule: 50-udev.rules
+    dracut: Skipping udev rule: 91-permissions.rules
+    dracut: Skipping udev rule: 80-drivers-modprobe.rules
+    dracut: *** Including module: dracut-systemd ***
+    dracut: *** Including module: haveged ***
+    dracut: *** Including module: usrmount ***
+    dracut: *** Including module: base ***
+    dracut: *** Including module: fs-lib ***
+    dracut: *** Including module: shutdown ***
+    dracut: *** Including module: suse ***
+    dracut: *** Including modules done ***
+    dracut: *** Installing kernel module dependencies and firmware ***
+    dracut: *** Installing kernel module dependencies and firmware done ***
+    dracut: *** Resolving executable dependencies ***
+    dracut: *** Resolving executable dependencies done***
+    dracut: *** Hardlinking files ***
+    dracut: *** Hardlinking files done ***
+    dracut: *** Stripping files ***
+    dracut: *** Stripping files done ***
+    dracut: *** Generating early-microcode cpio image ***
+    dracut: *** Constructing GenuineIntel.bin ****
+    dracut: *** Store current command line parameters ***
+    dracut: Stored kernel commandline:
+    dracut:  resume=UUID=020293eb-c029-4c81-88fb-d0f65a9a3628
+    dracut:  root=UUID=df6df96a-cbd2-4e91-a28b-28cbf66d77bb rootfstype=btrfs rootflags=rw,relatime,space_cache,subvolid=259,subvol=/@/.snapshots/1/snapshot,subvol=@/.snapshots/1/snapshot
+    dracut: *** Creating image file '/boot/initrd-4.4.180-94.100-default' ***
+    dracut: *** Creating initramfs image file '/boot/initrd-4.4.180-94.100-default' done ***
+    Creating initrd: /boot/initrd-4.4.73-5-default
+    dracut: Executing: /usr/bin/dracut --logfile /var/log/YaST2/mkinitrd.log --force /boot/initrd-4.4.73-5-default 4.4.73-5-default
+    dracut: *** Including module: bash ***
+    dracut: *** Including module: systemd ***
+    dracut: *** Including module: warpclock ***
+    dracut: *** Including module: systemd-initrd ***
+    dracut: *** Including module: i18n ***
+    dracut: *** Including module: drm ***
+    dracut: *** Including module: plymouth ***
+    dracut: *** Including module: btrfs ***
+    dracut: *** Including module: kernel-modules ***
+    dracut: *** Including module: resume ***
+    dracut: *** Including module: rootfs-block ***
+    dracut: *** Including module: suse-btrfs ***
+    dracut: *** Including module: suse-xfs ***
+    dracut: *** Including module: terminfo ***
+    dracut: *** Including module: udev-rules ***
+    dracut: Skipping udev rule: 40-redhat.rules
+    dracut: Skipping udev rule: 50-firmware.rules
+    dracut: Skipping udev rule: 50-udev.rules
+    dracut: Skipping udev rule: 91-permissions.rules
+    dracut: Skipping udev rule: 80-drivers-modprobe.rules
+    dracut: *** Including module: dracut-systemd ***
+    dracut: *** Including module: haveged ***
+    dracut: *** Including module: usrmount ***
+    dracut: *** Including module: base ***
+    dracut: *** Including module: fs-lib ***
+    dracut: *** Including module: shutdown ***
+    dracut: *** Including module: suse ***
+    dracut: *** Including modules done ***
+    dracut: *** Installing kernel module dependencies and firmware ***
+    dracut: *** Installing kernel module dependencies and firmware done ***
+    dracut: *** Resolving executable dependencies ***
+    dracut: *** Resolving executable dependencies done***
+    dracut: *** Hardlinking files ***
+    dracut: *** Hardlinking files done ***
+    dracut: *** Stripping files ***
+    dracut: *** Stripping files done ***
+    dracut: *** Generating early-microcode cpio image ***
+    dracut: *** Constructing GenuineIntel.bin ****
+    dracut: *** Store current command line parameters ***
+    dracut: Stored kernel commandline:
+    dracut:  resume=UUID=020293eb-c029-4c81-88fb-d0f65a9a3628
+    dracut:  root=UUID=df6df96a-cbd2-4e91-a28b-28cbf66d77bb rootfstype=btrfs rootflags=rw,relatime,space_cache,subvolid=259,subvol=/@/.snapshots/1/snapshot,subvol=@/.snapshots/1/snapshot
+    dracut: *** Creating image file '/boot/initrd-4.4.73-5-default' ***
+    dracut: *** Creating initramfs image file '/boot/initrd-4.4.73-5-default' done ***
+susenode02:~ #
+
+
+susenode01:~ # zypper install yast2-cluster
+Refreshing service 'SUSE_Linux_Enterprise_High_Availability_Extension_12_SP3_x86_64'.
+Refreshing service 'SUSE_Linux_Enterprise_Server_12_SP3_x86_64'.
+Loading repository data...
+Reading installed packages...
+Resolving package dependencies...
+
+The following NEW package is going to be installed:
+  yast2-cluster
+
+1 new package to install.
+Overall download size: 38.9 KiB. Already cached: 0 B. After the operation, additional 146.3 KiB will be used.
+Continue? [y/n/...? shows all options] (y): y
+Retrieving package yast2-cluster-3.4.0-2.6.1.noarch                              (1/1),  38.9 KiB (146.3 KiB unpacked)
+Retrieving: yast2-cluster-3.4.0-2.6.1.noarch.rpm ...............................................................[done]
+Checking for file conflicts: ...................................................................................[done]
+(1/1) Installing: yast2-cluster-3.4.0-2.6.1.noarch .............................................................[done]
+susenode01:~ #
+
+
+
+susenode01:~ # zypper install conntrack-tools
+Refreshing service 'SUSE_Linux_Enterprise_High_Availability_Extension_12_SP3_x86_64'.
+Refreshing service 'SUSE_Linux_Enterprise_Server_12_SP3_x86_64'.
+Location 'https://updates.suse.com/SUSE/Updates/SLE-HA/12-SP3/x86_64/update/media.1/media?fzuiORbrRYWa0UDJXS0Gh7AD8K6HB0Hq-ANzD8pVoofor0nxhULKIRzsUOaovpgI18x3sGai9iLpzmRnzQYkZb3bYHnJG-I3C2RjtCHQEg34dqUIve1em8Aax4HtmXu8A7Ul-ue7Lw' is temporarily unaccessible.
+Abort, retry, ignore? [a/r/i] (r):
+Autoselecting 'r' after 27 seconds.
+Loading repository data...
+Reading installed packages...
+Resolving package dependencies...
+
+The following 4 NEW packages are going to be installed:
+  conntrack-tools libnetfilter_cthelper0 libnetfilter_cttimeout1 libnetfilter_queue1
+
+4 new packages to install.
+Overall download size: 149.7 KiB. Already cached: 0 B. After the operation, additional 410.0 KiB will be used.
+Continue? [y/n/...? shows all options] (y): y
+Retrieving package libnetfilter_cthelper0-1.0.0-7.1.x86_64                       (1/4),   8.3 KiB ( 14.4 KiB unpacked)
+Retrieving: libnetfilter_cthelper0-1.0.0-7.1.x86_64.rpm ........................................................[done]
+Retrieving package libnetfilter_cttimeout1-1.0.0-9.1.x86_64                      (2/4),   8.3 KiB ( 18.4 KiB unpacked)
+Retrieving: libnetfilter_cttimeout1-1.0.0-9.1.x86_64.rpm .......................................................[done]
+Retrieving package libnetfilter_queue1-1.0.2-6.59.x86_64                         (3/4),  13.2 KiB ( 26.1 KiB unpacked)
+Retrieving: libnetfilter_queue1-1.0.2-6.59.x86_64.rpm ..........................................................[done]
+Retrieving package conntrack-tools-1.4.2-5.2.x86_64                              (4/4), 119.9 KiB (351.1 KiB unpacked)
+Retrieving: conntrack-tools-1.4.2-5.2.x86_64.rpm ...............................................................[done]
+Checking for file conflicts: ...................................................................................[done]
+(1/4) Installing: libnetfilter_cthelper0-1.0.0-7.1.x86_64 ......................................................[done]
+(2/4) Installing: libnetfilter_cttimeout1-1.0.0-9.1.x86_64 .....................................................[done]
+(3/4) Installing: libnetfilter_queue1-1.0.2-6.59.x86_64 ........................................................[done]
+(4/4) Installing: conntrack-tools-1.4.2-5.2.x86_64 .............................................................[done]
+susenode01:~ #
+
+
+
+
+susenode02:/etc/corosync # ls
+corosync.conf.example  corosync.conf.example.unicast  uidgid.d
+susenode02:/etc/corosync # pwd
+/etc/corosync
+susenode02:/etc/corosync #
